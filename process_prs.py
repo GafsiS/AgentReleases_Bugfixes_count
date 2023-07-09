@@ -1,9 +1,9 @@
+import datetime
 import json
 import csv
 import sys
 import getopt
-
-
+from time import strftime, time
 
 
 def extract_data(version, row):
@@ -19,7 +19,15 @@ def extract_data(version, row):
 
     for i in range(0, 6):
         print ("column "+str(i)+" is: "+row[i])
-        output.insert(i+1, row[i])
+        if i == 5:
+            new_date= datetime.datetime.strptime(row[i],'%Y-%m-%d %H:%M:%S %z %Z')
+            date2=new_date.strftime('%Y-%m-%d')
+            print ("updated date is: " +date2)
+            output.insert(i + 1, date2)
+        else:
+            output.insert(i + 1, row[i])
+
+
 
     if "team" in row[4]:
         new_row=row[4]
