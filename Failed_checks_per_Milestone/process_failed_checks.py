@@ -8,7 +8,7 @@ from time import strftime, time
 
 def extract_data(version, row, var):
     final_file = "./agent_failed_checks.csv"
-    input_file = "./failed_checks.csv"
+    input_file = "../failed_checks.csv"
     output = []
 
     print("info", "Processing file: " + input_file)
@@ -51,7 +51,7 @@ def extract_data(version, row, var):
 
 def add_data(version):
     final_file = "./agent_failed_checks.csv"
-    input_file = "./failed_checks.csv"
+    input_file = "../failed_checks.csv"
 
     lines = len(list(final_file))
     var = lines + 1

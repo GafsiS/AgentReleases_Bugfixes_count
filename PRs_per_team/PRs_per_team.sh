@@ -1,5 +1,7 @@
 #!/bin/bash
 
+gh auth login --with-token < ../AgentRelease_token.txt
+
 # The following function creates a file that details for each team, the total number of PRs, the total number of security, performance and functional bug fixes for a certain release.
 collect_bugfixes(){
     echo "Collecting number of PRs per team related to bugfixes"
@@ -12,7 +14,7 @@ collect_bugfixes(){
     perf=$(gh search prs --milestone "$version" --label "$line" --label bugfix/performance --limit 1000|wc -l)
     echo  "$line", "$prs", "$fun", "$sec", "$perf"
     sleep 15
-  done < $infile >> "$outfile"
+  done < "$infile" >> "$outfile"
 }
 
 # The following function creates a file that details for each team, the total number of PRs, the total number of PRs that were QAed before merge, and the total number of PRs that are not impacting Agent code.

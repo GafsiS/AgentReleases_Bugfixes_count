@@ -6,7 +6,7 @@ code_freeze=$2
 prod_deploy=$3
 
 #login to Github
-gh auth login --with-token < AgentRelease_token.txt
+gh auth login --with-token < ../AgentRelease_token.txt
 
 #Collecting Release data
 gh search prs --milestone $version --label "bugfix/functional" --limit 1000 >> bugfix_$version.csv
