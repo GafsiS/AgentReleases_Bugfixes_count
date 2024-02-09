@@ -2,12 +2,11 @@
 
 # Libraries
 from datetime import datetime
-import config
 
 
 def logging(level, message_incoming):
 
-    message = str(message_incoming)
+    message: str = str(message_incoming)
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 

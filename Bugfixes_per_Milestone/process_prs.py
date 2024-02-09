@@ -7,7 +7,7 @@ from time import strftime, time
 
 
 def extract_data(version, code_freeze, prod_deploy, row, var):
-    final_file = "./agent_bug_fixes.csv"
+    final_file = "agent_bug_fixes.csv"
     input_file = "./bugfix.csv"
     output = []
 
@@ -82,7 +82,7 @@ def extract_data(version, code_freeze, prod_deploy, row, var):
 
 
 def add_data(version, code_freeze, prod_deploy):
-    final_file = "./agent_bug_fixes.csv"
+    final_file = "agent_bug_fixes.csv"
     input_file = "./bugfix.csv"
 
     lines = len(list(final_file))
